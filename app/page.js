@@ -359,6 +359,7 @@ export default function Home() {
                   <li><a href="/privacidade">Política de Privacidade</a></li>
                   <li><a href="/termos">Termos de Serviço</a></li>
                   <li><a href="/reembolso">Política de Reembolso</a></li>
+                  <li><a href="/suporte">Suporte</a></li>
                   <li><a href="mailto:contato@laboratorioaura.com.br">Contato</a></li>
                 </ul>
               </div>

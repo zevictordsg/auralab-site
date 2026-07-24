@@ -931,3 +931,115 @@ img { max-width: 100%; display: block; }
   .pillar-mascot { width: 70px; }
   .hero-mascot { width: 220px; }
 }
+
+/* ═══════════════════════════════════════════
+   SUPORTE
+═══════════════════════════════════════════ */
+
+.support-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin: 32px 0 0;
+}
+
+.support-contact-card {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 28px 24px;
+  text-decoration: none;
+  transition: border-color 0.2s, background 0.2s, transform 0.2s;
+}
+
+.support-contact-card:hover {
+  background: var(--bg-card-hover);
+  transform: translateY(-2px);
+}
+
+.support-whatsapp:hover {
+  border-color: rgba(37, 211, 102, 0.4);
+}
+
+.support-email:hover {
+  border-color: var(--border-accent);
+}
+
+.support-card-icon {
+  font-size: 36px;
+  flex-shrink: 0;
+}
+
+.support-card-body h3 {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+
+.support-card-body p {
+  font-size: 13px;
+  color: var(--text-secondary);
+  margin-bottom: 10px;
+  line-height: 1.4;
+}
+
+.support-card-action {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.support-whatsapp .support-card-action {
+  color: #25d366;
+}
+
+.support-topics {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.support-topic {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 18px 20px;
+  border-bottom: 1px solid var(--border);
+}
+
+.support-topic:last-child {
+  border-bottom: none;
+}
+
+.support-topic > span {
+  font-size: 20px;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.support-topic strong {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 3px;
+}
+
+.support-topic p {
+  font-size: 13px;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  margin: 0;
+}
+
+@media (max-width: 640px) {
+  .support-cards { grid-template-columns: 1fr; }
+  .support-contact-card { padding: 20px 18px; }
+}
