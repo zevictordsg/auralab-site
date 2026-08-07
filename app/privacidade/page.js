@@ -55,6 +55,7 @@ export default function PrivacyPolicy() {
           <li><strong>Cadastro:</strong> nome, endereço de e-mail, data de nascimento, sexo biológico e foto de perfil (opcional).</li>
           <li><strong>Treinos:</strong> exercícios registrados, séries, repetições, cargas, volume semanal e records pessoais (PRs).</li>
           <li><strong>Nutrição:</strong> refeições, alimentos consumidos, macronutrientes (proteínas, carboidratos e gorduras), calorias e metas diárias.</li>
+          <li><strong>Scan de alimentos por foto:</strong> ao usar a funcionalidade de identificação de alimentos por imagem, a foto capturada é enviada de forma segura aos nossos servidores e processada por um serviço de IA de terceiros (OpenAI) exclusivamente para identificar o alimento e estimar valores nutricionais. A imagem não é armazenada após o processamento, não é usada para treinar modelos de IA de terceiros e não é utilizada para nenhuma outra finalidade.</li>
           <li><strong>Financeiro:</strong> receitas, despesas, categorias de gastos, saldo e patrimônio líquido inseridos manualmente.</li>
           <li><strong>Open Finance:</strong> dados bancários e de cartão de crédito sincronizados por meio do Open Finance, mediante autorização expressa e revogável do usuário.</li>
           <li><strong>Hábitos:</strong> hábitos personalizados, frequências de conclusão, streaks e histórico de consistência.</li>
@@ -99,6 +100,7 @@ export default function PrivacyPolicy() {
         </p>
         <ul>
           <li><strong>Prestadores de serviço:</strong> empresas que nos auxiliam na operação do app (hospedagem em nuvem, análise de dados, suporte técnico), sempre sob acordos de confidencialidade e com acesso limitado ao necessário;</li>
+          <li><strong>OpenAI (scan de alimentos):</strong> ao usar a identificação de alimentos por foto, a imagem é transmitida à OpenAI exclusivamente para reconhecimento do alimento e estimativa nutricional. A OpenAI não armazena a imagem nem a utiliza para treinar seus modelos, conforme contrato de processamento de dados vigente. Consulte a <a href="https://openai.com/policies/privacy-policy" target="_blank" rel="noopener noreferrer">Política de Privacidade da OpenAI</a>;</li>
           <li><strong>Apple App Store:</strong> dados de compras e assinaturas processados diretamente pela Apple, sujeitos à política de privacidade da Apple;</li>
           <li><strong>Open Finance:</strong> instituições financeiras autorizadas por você, exclusivamente para sincronização de dados financeiros;</li>
           <li><strong>Outros usuários:</strong> seu nome de usuário, nível, Aura Points e Auraman são visíveis nas funcionalidades sociais do app (ranking, perfil público, duelos);</li>
