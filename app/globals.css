@@ -1043,3 +1043,101 @@ img { max-width: 100%; display: block; }
   .support-cards { grid-template-columns: 1fr; }
   .support-contact-card { padding: 20px 18px; }
 }
+
+/* ═══════════════════════════════════════════
+   APP REDIRECT PAGE (/app)
+═══════════════════════════════════════════ */
+
+.app-redirect {
+  min-height: 100dvh;
+  background: #000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 32px;
+  text-align: center;
+}
+
+.app-redirect-logo {
+  font-size: 36px;
+  font-weight: 900;
+  letter-spacing: -0.04em;
+  color: #fff;
+  text-transform: uppercase;
+  margin-bottom: 40px;
+  background: var(--gradient-accent);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.app-redirect-title {
+  font-size: clamp(28px, 7vw, 42px);
+  font-weight: 800;
+  color: #fff;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  margin-bottom: 20px;
+}
+
+.app-redirect-sub {
+  font-size: 15px;
+  color: #888;
+  line-height: 1.6;
+  max-width: 320px;
+  margin-bottom: 36px;
+}
+
+.app-redirect-loading {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: #888;
+  margin-bottom: 40px;
+  min-width: 160px;
+  justify-content: center;
+}
+
+.app-redirect-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent);
+  display: inline-block;
+  animation: pulseDot 1.2s ease-in-out infinite;
+}
+
+@keyframes pulseDot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%       { opacity: 0.4; transform: scale(0.75); }
+}
+
+.app-redirect-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  border: 1.5px solid var(--accent);
+  border-radius: 100px;
+  padding: 16px 32px;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.2s, border-color 0.2s;
+  max-width: 340px;
+  width: 100%;
+  justify-content: center;
+}
+
+.app-redirect-btn:hover {
+  background: var(--accent-subtle);
+}
+
+.apple-icon {
+  width: 18px;
+  height: 18px;
+  color: var(--accent);
+  flex-shrink: 0;
+}
