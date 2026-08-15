@@ -39,6 +39,11 @@ export const metadata = {
     index: true,
     follow: true,
   },
+  icons: {
+    icon: [{ url: '/FAV_2x.webp', type: 'image/webp' }],
+    apple: [{ url: '/FAV_2x.webp' }],
+    shortcut: '/FAV_2x.webp',
+  },
 }
 
 export default function RootLayout({ children }) {
