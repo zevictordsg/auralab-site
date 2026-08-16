@@ -2,40 +2,36 @@
 
 import { useEffect, useState } from 'react'
 
-// itms-apps:// abre o App Store nativamente — funciona no TikTok, Instagram, etc.
-const ITMS_URL = 'itms-apps://apps.apple.com/br/app/auralab/id6794130003'
-const HTTPS_URL = 'https://apps.apple.com/br/app/auralab/id6794130003'
+const APP_STORE_URL = 'https://apps.apple.com/br/app/auralab/id6794130003'
 
-function isInAppBrowser() {
+function isTikTok() {
   if (typeof navigator === 'undefined') return false
-  return /musical_ly|tiktok|instagram|fbav|fban|bytedance/i.test(navigator.userAgent)
-}
-
-function isIOS() {
-  if (typeof navigator === 'undefined') return false
-  return /iphone|ipad|ipod/i.test(navigator.userAgent)
+  return /musical_ly|tiktok|bytedancewebview/i.test(navigator.userAgent)
 }
 
 export default function AppRedirect() {
   const [dots, setDots] = useState('.')
-  const [inApp, setInApp] = useState(false)
+  const [tiktok, setTiktok] = useState(false)
 
   useEffect(() => {
-    const inAppBrowser = isInAppBrowser()
-    setInApp(inAppBrowser)
+    const fromTikTok = isTikTok()
+    setTiktok(fromTikTok)
 
-    // Só faz redirect automático fora do TikTok/Instagram (eles bloqueiam)
-    if (!inAppBrowser) {
+    if (!fromTikTok) {
+      // Instagram, Safari, Chrome — redirect automático
       const timer = setTimeout(() => {
-        window.location.href = isIOS() ? ITMS_URL : HTTPS_URL
+        window.location.href = APP_STORE_URL
       }, 1200)
-      return () => clearTimeout(timer)
-    }
 
-    const dotAnim = setInterval(() => {
-      setDots(d => d.length >= 3 ? '.' : d + '.')
-    }, 400)
-    return () => clearInterval(dotAnim)
+      const dotAnim = setInterval(() => {
+        setDots(d => d.length >= 3 ? '.' : d + '.')
+      }, 400)
+
+      return () => {
+        clearTimeout(timer)
+        clearInterval(dotAnim)
+      }
+    }
   }, [])
 
   return (
@@ -47,24 +43,19 @@ export default function AppRedirect() {
       </h1>
 
       <p className="app-redirect-sub">
-        {inApp
+        {tiktok
           ? 'Toque no botão abaixo para abrir o Auralab na App Store.'
           : 'Estamos abrindo a loja certa para o seu dispositivo. Se nada acontecer, toque no botão abaixo.'}
       </p>
 
-      {!inApp && (
+      {!tiktok && (
         <div className="app-redirect-loading">
           <span className="app-redirect-dot" />
           Abrindo a loja{dots}
         </div>
       )}
 
-      {/* Botão principal — usa itms-apps:// para abrir App Store direto */}
-      <a
-        href={ITMS_URL}
-        className="app-redirect-btn"
-        rel="noopener noreferrer"
-      >
+      <a href={APP_STORE_URL} className="app-redirect-btn">
         <svg
           className="apple-icon"
           viewBox="0 0 814 1000"
@@ -76,13 +67,7 @@ export default function AppRedirect() {
         Baixar na App Store
       </a>
 
-      {/* Fallback HTTPS caso itms-apps não funcione */}
-      <a
-        href={HTTPS_URL}
-        className="app-redirect-fallback"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
+      <a href={APP_STORE_URL} className="app-redirect-fallback">
         Abrir no navegador →
       </a>
     </div>
